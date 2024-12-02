@@ -11,7 +11,7 @@ Implementação de uma tabela hash em C:
 - Redimensionamento automático do tamanho da tabela (dobra a tabela quando a capacidade/Número de registros for maior que 0,7);
 - Existe a tabela atual com todos os registros e encadeamentos;
 - Exporta a tabela para um arquivo ".txt";
-- Importa uma tabela através de um arquivo ".txt" formatado (CPF-NOME SOBRENOME-DATA DE NASCIMENTO [dd/mm/aaaA]);
+- Importa uma tabela através de um arquivo ".txt" formatado (CPF-NOME SOBRENOME-DATA DE NASCIMENTO [dd/mm/aaaa]);
 - Valida os dados importados do arquivo e só registra as informações válidas.
 
 Para executar, necessário apenas instalar o GCC.
