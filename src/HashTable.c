@@ -20,6 +20,22 @@ void initialize_table() {
     }
 }
 
+//Verifica o numero de registros na tabela
+int contar_registros() {
+    int contador = 0;
+
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        Node *current = hash_table[i];
+        while (current != NULL) {
+            contador++;
+            current = current->next;
+        }
+    }
+
+    return contador;
+}
+
+
 // Insere o cadastro na tabela
 void insert(const char *cpf, const char *nome, const char *data_nascimento) {
     unsigned int index = hash_function(cpf);
@@ -27,7 +43,6 @@ void insert(const char *cpf, const char *nome, const char *data_nascimento) {
     Node *current = hash_table[index];
     while (current != NULL) {
         if (strcmp(current->cpf, cpf) == 0) { 
-            // Atualiza o nó existente
             strcpy(current->value.nome, nome);
             strcpy(current->value.data_nascimento, data_nascimento);
             strcpy(current->value.cpf, cpf);
@@ -45,11 +60,14 @@ void insert(const char *cpf, const char *nome, const char *data_nascimento) {
     new_node->next = hash_table[index];
     hash_table[index] = new_node;
 
-    element_count++;
-    if ((float)element_count / TABLE_SIZE > LOAD_FACTOR_THRESHOLD) {
+    registros = contar_registros();
+
+    if ((float)registros / TABLE_SIZE > LOAD_FACTOR_THRESHOLD) {
         resize_table();
     }
 }
+
+
 
 // Funcao para verificar se um numero e primo
 bool is_prime(int n) {
@@ -76,6 +94,8 @@ void resize_table() {
     Node **old_table = hash_table;
 
     // Aloca nova tabela com o tamanho atualizado
+    printf("\nNumero de registros: %d\n", registros);
+    printf("Novo tamanho da tabela: %d\n", TABLE_SIZE);
     hash_table = (Node **)malloc(TABLE_SIZE * sizeof(Node *));
     for (int i = 0; i < TABLE_SIZE; i++) {
         hash_table[i] = NULL;
@@ -124,7 +144,7 @@ void delete(const char *cpf) {
                 prev->next = current->next;
             }
             free(current);
-            element_count--;
+            registros--;
             return;
         }
         prev = current;
