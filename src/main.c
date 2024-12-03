@@ -4,9 +4,10 @@
  * Data de Criação: 19/11/2024
  * Descrição: Este projeto implementa uma tabela hash em C para armazenar dados pessoais, como nome, CPF e data de nascimento;
  *            A chave de busca é o CPF;
- *            A função hash utilizada é a djb2.
- * Licença: Livre de licença
- * Versão: 1.2
+ *            A função hash utilizada é a djb2;
+ *            Valida as entradas (CPF,NOME e DATA DE NASCIMENTO).
+ * Licença: Sem restrições
+ * Versão: 3.0
  *
  * Dependências: Nenhuma biblioteca externa necessária.
  */
