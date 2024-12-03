@@ -8,12 +8,14 @@ Implementação de uma tabela hash em C:
 - Função hash utilizada é a djb2;
 - Solução de colisão por encadeamento;
 - Validações dos dados de entrada;
-- Redimensionamento automático do tamanho da tabela (dobra a tabela quando a capacidade/Número de registros for maior que 0,7);
-- Existe a tabela atual com todos os registros e encadeamentos;
+- Redimensionamento automático do tamanho da tabela (dobra tabela quando a capacidade/Número de registros for maior que 0,7, mantendo sempre o tamanho um número primo);
+- Exibe a tabela atual com todos os registros e encadeamentos;
 - Exporta a tabela para um arquivo ".txt";
-- Importa uma tabela através de um arquivo ".txt" formatado (CPF-NOME SOBRENOME-DATA DE NASCIMENTO [dd/mm/aaaa]);
+- Importa uma tabela através de um arquivo ".txt" formatado (CPF-NOME SOBRENOME-DATA DE NASCIMENTO [dd/mm/aaaA]);
 - Valida os dados importados do arquivo e só registra as informações válidas.
 
 Para executar, necessário apenas instalar o GCC.
+
+
 
 
