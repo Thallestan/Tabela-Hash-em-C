@@ -1,20 +1,22 @@
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 
-#define INITIAL_TABLE_SIZE 10
+#define INITIAL_TABLE_SIZE 11 //Tamanho inicial da tabela = 11
 #define MAX_INPUT_SIZE 100  
-#define LOAD_FACTOR_THRESHOLD 0.7
+#define LOAD_FACTOR_THRESHOLD 0.7 //Load Factor limite
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdbool.h>
+
 
 // Estrutura para armazenar os dados da pessoa
 typedef struct {
     char nome[MAX_INPUT_SIZE];
-    char data_nascimento[11];  // Formato: "DD/MM/AAAA"
-    char cpf[12];              // CPF com 11 dígitos + '\0'
+    char data_nascimento[11];
+    char cpf[12];              
 } DadosPessoa;
 
 // Estrutura da tabela hash
@@ -25,6 +27,8 @@ typedef struct Node {
 } Node;
 
 // Protótipos das funções
+bool is_prime(int n);
+int next_prime(int n);
 int cpf_ja_cadastrado(const char *cpf);
 int validar_data(const char *data);
 int validar_cpf(const char *cpf);
