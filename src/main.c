@@ -12,8 +12,8 @@
  * Dependências: Nenhuma biblioteca externa necessária.
  */
 
-#include "HashTable.c"
 #include "HashTable.h"
+#include "HashTable.c"
 
 int main() {
     initialize_table();
@@ -146,17 +146,17 @@ int main() {
                 if (validar_cpf(cpf)) {
                     DadosPessoa *result = search(cpf);
                     if (result) {
-                        printf("\nCadastro encontrado:\nNome: %s.\nData de Nascimento: %s.\nCPF: %s.\n", result->nome, result->data_nascimento, result->cpf);
+                        printf("\nCadastro encontrado:\nNome: %s.\nData de Nascimento: %s.\nCPF: %s.\n", result->nome, result->data_nascimento, cpf);
                     } else {
-                        printf("CPF nao encontrado.\n");
+                        printf("\nCPF nao encontrado.\n");
                     }
                 } else {
-                    printf("CPF invalido: %s\n", cpf);
+                    printf("\nCPF invalido: %s\n", cpf);
                 }
                 break;
 
             case 3:  // Remover
-                printf("Digite o CPF para remover: ");
+                printf("\nDigite o CPF para remover: ");
                 fgets(cpf, 12, stdin);
                 cpf[strcspn(cpf, "\n")] = '\0';
 
@@ -179,7 +179,7 @@ int main() {
 
             case 6:  // Carregar de arquivo
                 printf("\nArquivo deve estar no formato CPF-NOME-DATA (XXXXXXXXXXX-NOME SOBRENOME-DD/MM/AAAA).\nUm cadastro por linha.\nSem linhas vazias.\nExtensao do arquivo deve ser .txt\nSem caracteres especiais ou acentos\n");
-                printf("Informe o nome/diretorio do arquivo para carregar (com extensao): ");
+                printf("Informe o diretorio/mascara do arquivo para carregar (com extensao): ");
                 char nome_arquivo_carregar[MAX_INPUT_SIZE];
                 fgets(nome_arquivo_carregar, MAX_INPUT_SIZE, stdin);
                 nome_arquivo_carregar[strcspn(nome_arquivo_carregar, "\n")] = '\0';
