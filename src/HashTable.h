@@ -1,7 +1,7 @@
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 
-#define INITIAL_TABLE_SIZE 11 //Tamanho inicial da tabela = 11
+#define INITIAL_TABLE_SIZE 23 //Tamanho inicial da tabela = 23
 #define MAX_INPUT_SIZE 100  
 #define LOAD_FACTOR_THRESHOLD 0.7 //Load Factor limite
 
@@ -47,7 +47,7 @@ int validar_nome(const char *nome);
 char confirmacao;
 Node **hash_table; 
 int TABLE_SIZE = INITIAL_TABLE_SIZE;  // Tamanho inicial da tabela
-int element_count = 0;  // Número de elementos na tabela
+int registros = 0;  // Número de elementos na tabela
 
 #endif
 
