@@ -14,7 +14,7 @@ Implementação de uma tabela hash em C:
 - Importa uma tabela através de um arquivo ".txt" formatado (CPF-NOME SOBRENOME-DATA DE NASCIMENTO [dd/mm/aaaA]);
 - Valida os dados importados do arquivo e só registra as informações válidas.
 
-Para executar, necessário apenas instalar o GCC.
+Para executar, necessário instalar apenas o GCC.
 
 
 
